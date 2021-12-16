@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Juhannus vs joulu</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/pagestyles.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="nav-wrapper"> 
+                <div class="left-side"> 
+                    <div class="nav-link-wrapper"> 
+                        <a href="index.html">Koti</a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="about.html">Taustaa</a>
+                    </div>  
+                </div>
+                <div class="center"> 
+                    <div>VISUALISOINTEJA SÄÄSTÄ</div>
+                </div>    
+                <div class="right-side"> 
+                    <div class="brand">
+                        <div>Elli Jokinen & Heli Saarinen</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-content">
+                <h2>Juhannus vs joulu</h2>
+                <p>Onko juhannuksena ja jouluna samanlainen sää? Niinhän ne väittävät. Tarkasteltavana ovat Suomen suosituimmat mökkipaikkakunnat.</p> 
+                <p>Valitse alasvetovalikosta, mitä paikkakuntaa haluat tarkastella.</p>
+                <form id="form-wrapper" class="form-wrapper">
+                    <select id="choice" class="select-style" onchange="showVisuals()">
+                        <option value="kuopio">Kuopio</option>
+                        <option value="mikkeli">Mikkeli</option>
+                        <option value="parainen">Parainen</option>
+                    </select>
+                </form>
+            </div>
+            
+            <div id="image-wrapper" class="image-wrapper">
+                <img id="visuals" src="images/joulu-juhannus_Kuopio.JPG">
+            </div>
+
+
+            <div class="footer">
+                &copy; 2021
+            </div>
+
+        </div>
+    </body>
+    <script>
+
+        function showVisuals() {
+
+            var choice = document.getElementById("choice");
+            var value = choice.options[choice.selectedIndex].value;
+
+            if (value == "kuopio") {
+                document.getElementById("visuals").src = "images/joulu-juhannus_Kuopio.JPG";
+            } else if (value == "mikkeli") {
+                document.getElementById("visuals").src = "images/joulu-juhannus_Mikkeli.JPG";
+            } else {
+                document.getElementById("visuals").src = "images/joulu-juhannus_Parainen.JPG";
+            };
+        }
+
+    </script>
+</html>

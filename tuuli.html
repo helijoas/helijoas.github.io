@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Tuuli</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/pagestyles.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="nav-wrapper"> 
+                <div class="left-side"> 
+                    <div class="nav-link-wrapper"> 
+                        <a href="index.html">Koti</a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="about.html">Taustaa</a>
+                    </div>  
+                </div>
+                <div class="center"> 
+                    <div>VISUALISOINTEJA SÄÄSTÄ</div>
+                </div>    
+                <div class="right-side"> 
+                    <div class="brand">
+                        <div>Elli Jokinen & Heli Saarinen</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-content">
+                <h2>Tuuli lentoasemilla</h2>
+                <p>Näin tuuli on vaihdellut tiettyinä päivinä lentoasemilla eri puolilla Suomea. </br> 
+                    Näillä tiedoilla ei vielä aivan lentoon lähdetä - muistathan vielä tarkistaa myös tuulen suunnan, joka muuten saattaa vaihdella aika montakin kertaa päivän aikana.</p> 
+                <p>Valitse alasvetovalikosta, mitä lentoasemaa haluat tarkastella.</p>
+                <form id="form-wrapper" class="form-wrapper">
+                    <select id="choice" class="select-style" onchange="showVisuals()">
+                        <option value="inari">Inari Ivalo lentoasema</option>
+                        <option value="kajaani">Kajaani lentoasema</option>
+                        <option value="kouvola">Kouvola Utti lentoasema</option>
+                        <option value="kruunupyy">Kruunupyy Kokkola-Pietarsaari lentoasema</option>
+                        <option value="salo">Salo Kiikala lentoasema</option>
+                    </select>
+                </form>
+            </div>
+            
+            <div id="image-wrapper" class="image-wrapper">
+                <img id="visuals" src="images/tuuli_inari-ivalo.png">
+            </div>
+
+
+            <div class="footer">
+                &copy; 2021
+            </div>
+
+        </div>
+    </body>
+    <script>
+
+        function showVisuals() {
+
+            var choice = document.getElementById("choice");
+            var value = choice.options[choice.selectedIndex].value;
+
+            if (value == "inari") {
+                document.getElementById("visuals").src = "images/tuuli_inari-ivalo.png";
+            } else if (value == "kajaani") {
+                document.getElementById("visuals").src = "images/tuuli_kajaani-lentoasema.png";
+            } else if (value == "kouvola") {
+                document.getElementById("visuals").src = "images/tuuli_kouvola-utti-lentoasema.png";
+            } else if (value == "kruunupyy") {
+                document.getElementById("visuals").src = "images/tuuli_kruunupyy-kokkola-pietarsaari-lentoasema.png";
+            } else {
+                document.getElementById("visuals").src = "images/tuuli_salo-kiikala-lentoasema.png";
+            };
+        }
+
+    </script>
+</html>

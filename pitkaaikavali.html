@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Pitkän aikavälin sää</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/pagestyles.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="nav-wrapper"> 
+                <div class="left-side"> 
+                    <div class="nav-link-wrapper"> 
+                        <a href="index.html">Koti</a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="about.html">Taustaa</a>
+                    </div>  
+                </div>
+                <div class="center"> 
+                    <div>VISUALISOINTEJA SÄÄSTÄ</div>
+                </div>    
+                <div class="right-side"> 
+                    <div class="brand">
+                        <div>Elli Jokinen & Heli Saarinen</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-content">
+                <h2>Pitkän aikavälin sää</h2>
+                <p>Näin sää on kehittynyt viidenkymmenen vuoden aikana eri puolilla Suomea.</p> 
+                <p>Valitse alasvetovalikosta, mitä paikkakuntaa haluat tarkastella.</p>
+                <form id="form-wrapper" class="form-wrapper">
+                    <select id="choice" class="select-style" onchange="showVisuals()">
+                        <option value="kaisaniemi">Helsinki Kaisaniemi</option>
+                        <option value="kuusamo">Kuusamo</option>
+                        <option value="oulu">Oulu</option>
+                        <option value="utsjoki">Utsjoki</option>
+                    </select>
+                </form>
+            </div>
+            
+            <div id="image-wrapper" class="image-wrapper">
+                <img id="visuals" src="images/pitka_Kaisaniemi_lampo-sade_1970-2021.JPG">
+            </div>
+
+
+            <div class="footer">
+                &copy; 2021
+            </div>
+
+        </div>
+    </body>
+    <script>
+
+        function showVisuals() {
+
+            var choice = document.getElementById("choice");
+            var value = choice.options[choice.selectedIndex].value;
+
+            if (value == "kaisaniemi") {
+                document.getElementById("visuals").src = "images/pitka_Kaisaniemi_lampo-sade_1970-2021.JPG";
+            } else if (value == "kuusamo") {
+                document.getElementById("visuals").src = "images/pitka_Kuusamo_lampo-sade_1970-2021.JPG";
+            } else if (value == "oulu") {
+                document.getElementById("visuals").src = "images/pitka_Oulu_lampo-sade_1970-2021.JPG";
+            } else {
+                document.getElementById("visuals").src = "images/pitka_Utsjoki_lampo-sade_1970-2021.JPG";
+            };
+        }
+
+    </script>
+</html>

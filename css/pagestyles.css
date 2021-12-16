@@ -1,0 +1,174 @@
+/* Master styles */
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0px;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Nav styles */
+.nav-wrapper{
+    display: flex; /* sijoittaa elementit vierekkäin */
+    justify-content: space-between; /* tuo kaiken mahdollisen tilan elementtien väliin */
+    margin: 0px;
+    padding: 38px; /* navin tila */
+}
+
+.left-side {
+    display: flex;   
+}
+
+.nav-wrapper > .center > div {
+    font-size: 1.5em;
+}
+
+.nav-wrapper > .right-side > div {
+    font-size: 0.9em;
+}
+
+.nav-wrapper > .left-side > div { /* näin pääsee kiinni suoraan tiettyyn elementtiin */
+    margin-right: 20px;
+    font-size: 0.9em;
+    /*text-transform: uppercase;*/
+}
+
+/* nämä alla olevat tyylit mahdollistavat viivan linkin alla, joka on borderin viiva */
+.nav-link-wrapper { 
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s; /* linkin alla olevan viivan animointi */
+}
+
+.nav-link-wrapper a { 
+    color: #8a8a8a;
+    text-decoration: none; /* poistaa html:n default alaviivauksen */
+    transition: color 0.5s; /* tekstin värin animointi */
+}
+
+/* tämä vaikuttaa tietyn elementin hover-toimintaan */
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid black;
+}
+
+/* tämä vaikuttaa elementin "linkki-toiminnallisuuteen" */
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+    color: black !important;
+}
+
+/* Alasvetovalikko */
+
+select {
+    /* resetoidaan perus-select */
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* styling */
+    background-color: white;
+    border: thin solid black;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em; 
+}
+
+/* Nuoli alasvetovalikkoon */
+
+select.select-style {
+    background-image:
+        linear-gradient(45deg, transparent 50%, rgba(70, 130,180, 0.5) 50%),
+        linear-gradient(135deg, rgba(70, 130,180, 0.5) 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+select.select-style:focus {
+    background-image:
+    linear-gradient(45deg, transparent 50%, rgba(70, 130,180, 0.5) 50%),
+    linear-gradient(135deg, rgba(70, 130,180, 0.5) 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: rgba(70, 130,180, 0.5);
+  outline: 0;
+}
+
+/* Yleinen tekstialue */
+
+.overview-content {
+    max-width: 60%;
+    margin: auto;
+}
+
+
+/* Visualisointi */
+
+.image-wrapper > img {
+    width: 80%;
+    margin: 50px;
+}
+
+/* Sää maailmalla */
+
+#map { 
+    height: 450px; 
+    width: 75%; 
+    margin: auto;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 20px;
+    padding: 2em;
+}
+
+.grid-item {
+    background-color: rgba(70, 130,180, 0.5);
+    border: 1px;
+    box-shadow: 10px 10px 5px grey;
+    font-size: 0.9em;
+}
+
+/* Footer */
+.footer {
+    font-size: 0.9em;
+    padding: 20px;
+    text-align: right;
+}

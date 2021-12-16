@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Kesäjuhlat</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/pagestyles.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="nav-wrapper"> 
+                <div class="left-side"> 
+                    <div class="nav-link-wrapper"> 
+                        <a href="index.html">Koti</a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="about.html">Taustaa</a>
+                    </div>  
+                </div>
+                <div class="center"> 
+                    <div>VISUALISOINTEJA SÄÄSTÄ</div>
+                </div>    
+                <div class="right-side"> 
+                    <div class="brand">
+                        <div>Elli Jokinen & Heli Saarinen</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-content">
+                <h2>Kesäjuhlien sää?</h2>
+                <p>Oletko järjestämässä juhlia kesälle ja tärkeää olisi, että päivälle osuu kaunis sää? Tutki tilastojen valossa, minä päivänä sää on varmimmin kaunis. Tietenkään tämä ei ole ennuste, vaan perustuu tilasoihin kahdeltakymmeneltä vuodelta.</p>
+                <p>Valitse alasvetovalikosta, mitä kuukautta haluat tarkastella. Kaikki visualisoinnit sijoittuvat Helsingin Kaisaniemeen.</br>
+                <i>Psst! Tarkkana heinäkuun sademäärän asteikon kanssa!</i></p>
+                <form id="form-wrapper" class="form-wrapper">
+                    <select id="choice" class="select-style" onchange="showVisuals()">
+                        <option value="kesa">Kesäkuu</option>
+                        <option value="heina">Heinäkuu</option>
+                        <option value="elo">Elokuu</option>
+                    </select>
+                </form>
+            </div>
+            
+            <div id="image-wrapper" class="image-wrapper">
+                <img id="visuals" src="images/kesa_kaisaniemi_kesakuu.JPG">
+            </div>
+
+
+            <div class="footer">
+                &copy; 2021
+            </div>
+
+        </div>
+    </body>
+    <script>
+
+        function showVisuals() {
+
+            var choice = document.getElementById("choice");
+            var value = choice.options[choice.selectedIndex].value;
+
+            if (value == "kesa") {
+                document.getElementById("visuals").src = "images/kesa_kaisaniemi_kesakuu.JPG";
+            } else if (value == "heina") {
+                document.getElementById("visuals").src = "images/kesa_kaisaniemi_heinakuu.JPG";
+            } else {
+                document.getElementById("visuals").src = "images/kesa_kaisaniemi_elokuu.JPG";
+            };
+        }
+
+    </script>
+</html>

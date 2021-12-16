@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Päivän sää</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/pagestyles.css">
+    <!--Leaflet CSS for map-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <!--Leaflet script for map-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script src="scripts/getWeather.js"></script>
+</head>
+<body>
+<div class="container">
+    
+    <div class="nav-wrapper"> 
+        <div class="left-side"> 
+            <div class="nav-link-wrapper"> 
+                <a href="index.html">Koti</a>
+            </div>
+            <div class="nav-link-wrapper">
+                <a href="about.html">Taustaa</a>
+            </div>  
+        </div>
+        <div class="center"> 
+            <div>VISUALISOINTEJA SÄÄSTÄ</div>
+        </div>    
+        <div class="right-side"> 
+            <div class="brand">
+                <div>Elli Jokinen & Heli Saarinen</div>
+            </div>
+        </div>
+    </div> 
+    
+    <div id="map"></div>
+
+    <div>
+        <h2>Sää maailmalla juuri nyt</h2>
+        <p>Tältä näyttää sää eri puolilla maailmaa juuri nyt. Tiedot ovat peräisin <a href="https://openweathermap.org/">OpenWeather</a>-palvelusta.</p>
+    </div>
+    
+    <div class="grid-container">
+        
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>Helsinki</h3>
+                <div id="hel"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>Lontoo</h3>
+                <div id="lon"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>Kairo</h3>
+                <div id="kai"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>Mumbai</h3>
+                <div id="mum"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>Tokio</h3>
+                <div id="tok"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>Singapore</h3>
+                <div id="sin"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>Sydney</h3>
+                <div id="syd"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>São Paulo</h3>
+                <div id="sp"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>New York</h3>
+                <div id="ny"></div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="grid-content">
+                <h3>Los Angeles</h3>
+                <div id="la"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2021
+    </div>
+    
+</div>
+</body>
+<script>
+
+    getWeather();
+
+</script>
+</html>
